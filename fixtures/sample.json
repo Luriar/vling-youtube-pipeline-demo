@@ -1,0 +1,51 @@
+{
+  "channels": [
+    {
+      "id": "fictional-c1",
+      "name": "Example Cooking Channel",
+      "subscribers": 10000,
+      "category": "food",
+      "audience": {
+        "25-34": "45%"
+      }
+    },
+    {
+      "id": "fictional-c2",
+      "name": "Sample Gadget Research",
+      "subscribers": 4500,
+      "category": "tech",
+      "audience": {
+        "18-24": "30%"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": "example-v1",
+      "channel_id": "fictional-c1",
+      "kind": "video",
+      "title": "Demo recipe",
+      "views": 2400,
+      "likes": 210,
+      "comments": 12
+    },
+    {
+      "id": "example-v2",
+      "channel_id": "fictional-c1",
+      "kind": "short",
+      "title": "Fictional tip",
+      "views": 7400,
+      "likes": 1000,
+      "comments": 81
+    },
+    {
+      "id": "example-v3",
+      "channel_id": "fictional-c2",
+      "kind": "video",
+      "title": "Synthetic review",
+      "views": 500,
+      "likes": 21,
+      "comments": 3
+    }
+  ]
+}

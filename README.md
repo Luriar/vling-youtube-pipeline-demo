@@ -37,3 +37,28 @@ Python 3.10 이상을 권장합니다. 외부 API 키나 실서비스 계정이 
 - [전체 인턴 및 프로젝트 목록](https://github.com/Luriar/dinostudio-internship-portfolio)
 
 **주의:** 이 공개 코드는 기존 회사 프로젝트를 이전하거나 일부 수정하여 공개한 것이 아닙니다. 실제 업무 수행 내용은 설명하되 고객 데이터나 정량 성과를 공개하지 않습니다.
+
+## 구현 보강: 데이터 적재와 정합성 검증
+
+`pipeline.py`는 가상 채널 및 영상 데이터로 SQLite UPSERT, 외래키 검증, 배치 롤백과 수동 메모 보존을 구현했습니다. `seed.py`는 가상 JSON 데이터로 실행할 수 있습니다.
+
+```bash
+python seed.py
+python -m unittest discover -s tests -v
+```
+
+이는 실제 Vling 또는 YouTube API에 접속하는 코드가 아니며, 2024년 회사 원본과 무관한 별도 구현입니다.
+
+## 로컬 대시보드와 자동 검증
+
+Flask 화면을 통해 가상 채널과 영상 데이터를 확인하고 별도 메모를 수정할 수 있습니다. 모든 데이터는 fixtures/sample.json에서 생성됩니다.
+
+```bash
+python -m pip install -r requirements.txt
+python seed.py
+python app.py
+```
+
+브라우저 주소: http://127.0.0.1:5000/
+
+[구현 흐름과 실행 안내](docs/PIPELINE.md). GitHub Actions로 단위 테스트와 시드 적재를 자동 검증합니다.

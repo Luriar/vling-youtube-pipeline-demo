@@ -20,3 +20,5 @@ venv/
 *.pem
 *.key
 *.secret
+
+!fixtures/*.json
